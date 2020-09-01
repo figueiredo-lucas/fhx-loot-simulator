@@ -22,7 +22,7 @@ export class RollListComponent implements OnInit {
   npcs: Npc[];
 
   openModal() {
-    const dialogRef = this.dialog.open(RollComponent, { width: '40vw' });
+    const dialogRef = this.dialog.open(RollComponent);
     dialogRef.afterClosed().subscribe((roll: Roll) => {
       if (roll) {
         this.rollService.calculateRoll(roll);
@@ -39,7 +39,7 @@ export class RollListComponent implements OnInit {
   }
 
   openDetails(roll: Roll) {
-    this.dialog.open(DetailedRollComponent, { width: '60vw', data: { roll } });
+    this.dialog.open(DetailedRollComponent, { data: { roll } });
   }
 
   ngOnInit(): void {

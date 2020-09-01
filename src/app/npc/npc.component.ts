@@ -16,7 +16,7 @@ export class NpcComponent implements OnInit {
   npcs: Npc[];
 
   openModal() {
-    const dialogRef = this.dialog.open(NpcSaveComponent, { width: '60vw'});
+    const dialogRef = this.dialog.open(NpcSaveComponent);
     dialogRef.afterClosed().subscribe(data => {
       if (data) {
         this.npcService.save(data);

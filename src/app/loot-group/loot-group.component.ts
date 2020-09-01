@@ -23,7 +23,7 @@ export class LootGroupComponent implements OnInit {
   private npcs: Npc[];
 
   openModal() {
-    const dialogRef = this.dialog.open(LootGroupSaveComponent, { width: '60vw'});
+    const dialogRef = this.dialog.open(LootGroupSaveComponent);
     dialogRef.afterClosed().subscribe(data => {
       if (data) {
         this.lootsService.save(data);
