@@ -25,7 +25,7 @@ export class RollListComponent implements OnInit {
     dialogRef.afterClosed().subscribe((roll: Roll) => {
       if (roll) {
         this.rollService.calculateRoll(roll);
-        this.rolls.push(roll);
+        this.rollService.save(roll);
       }
     })
   }
@@ -39,6 +39,7 @@ export class RollListComponent implements OnInit {
 
   ngOnInit(): void {
     this.npcs = this.npcService.getAll();
+    this.rolls = this.rollService.getAll();
   }
 
 }

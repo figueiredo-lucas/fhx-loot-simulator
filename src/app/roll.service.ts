@@ -1,13 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Roll } from './shared/roll';
 import { NpcLoot } from './shared/npc';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RollService {
 
-  constructor() { }
+  constructor(private storage: StorageService) { }
+
+  rolls: Roll[];
+
+  getAll(): Roll[] {
+    if (!this.rolls) {
+      const rolls = this.storage.get('roll');
+      this.rolls = rolls || [];
+    }
+    return this.rolls;
+  }
+
+  save(roll: Roll) {
+    this.rolls.push(roll);
+    this.storage.store('roll', this.rolls);
+  }
 
   calculateRoll(roll: Roll) {
     roll.rolls = [];
