@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title fxLayout="row" fxLayoutAlign="space-between">
+    <span>Loot Groups</span>
+    <button mat-raised-button color="primary" (click)="openModal()"><i class="fa fa-plus"></i></button>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-list dense>
+      <mat-list-item *ngFor="let l of loots; let i = index">
+        <span matLine>{{l.name}}</span>
+        <span matLine *ngFor="let it of l.items"> &bull; {{it}}</span>
+        <button mat-button color="accent" (click)="delete(i)">
+          <i class="fa fa-remove"></i>
+       </button>
+       <mat-divider *ngIf="i < loots.length - 1"></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

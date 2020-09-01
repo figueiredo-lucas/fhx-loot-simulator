@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title fxLayout="row" fxLayoutAlign="space-between">
+    <span>NPCs</span>
+    <button mat-raised-button color="primary" (click)="openModal()"><i class="fa fa-plus"></i></button>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-list dense>
+      <mat-list-item *ngFor="let npc of npcs; let i = index">
+        <span matLine>{{npc.name}}</span>
+        <span matLine *ngFor="let g of npc.groups"> &bull; {{g.loot.name}} - {{(g.probability * 100).toFixed(0)}}%</span>
+        <button mat-button color="accent" (click)="delete(i)">
+          <i class="fa fa-remove"></i>
+       </button>
+       <mat-divider *ngIf="i < npcs.length - 1"></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Configure Roll</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="outline" style="width: 100%">
+    <mat-label>Amount of Rolls</mat-label>
+    <input matInput type="number" [(ngModel)]="roll.amountOfRolls">
+  </mat-form-field>
+  <mat-form-field appearance="outline" style="width: 100%">
+    <mat-label>NPC</mat-label>
+    <mat-select [(ngModel)]="roll.npc">
+      <mat-option *ngFor="let npc of npcs" [value]="npc">
+        {{npc.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button-raised (click)="run()">Run</button>
+</mat-dialog-actions>

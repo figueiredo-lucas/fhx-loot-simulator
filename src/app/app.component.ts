@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Roll } from './shared/roll';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'fhx-loot-simulator';
+
+  rolls: Roll[]
+
+  openModal() {
+
+  }
+
 }
