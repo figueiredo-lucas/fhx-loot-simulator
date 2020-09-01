@@ -1,0 +1,7 @@
+.mb{
+  margin-bottom: 10px;
+}
+
+.mb:nth-child(3n) {
+  margin-right: 0px !important;
+}

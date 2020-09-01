@@ -22,6 +22,7 @@ import { LootGroupSaveComponent } from './loot-group-save/loot-group-save.compon
 import { NpcSaveComponent } from './npc-save/npc-save.component';
 import { RollComponent } from './roll/roll.component';
 import { RollListComponent } from './roll-list/roll-list.component';
+import { DetailedRollComponent } from './detailed-roll/detailed-roll.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RollListComponent } from './roll-list/roll-list.component';
     LootGroupSaveComponent,
     NpcSaveComponent,
     RollComponent,
-    RollListComponent
+    RollListComponent,
+    DetailedRollComponent
   ],
   imports: [
     BrowserModule,

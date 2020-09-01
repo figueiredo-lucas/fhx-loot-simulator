@@ -2,17 +2,8 @@
   <span>FHX Loot Simulator</span>
 </mat-toolbar>
 
-<div fxLayout="row" fxLayoutGap="15px" style="margin: 20px">
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="margin: 20px">
   <app-loot-group fxFlex></app-loot-group>
   <app-npc fxFlex></app-npc>
-</div>
-<div fxLayout="row" style="margin: 20px">
-  <mat-list dense>
-    <mat-list-item *ngFor="let r of rolls; index as i">
-      <span matLine>
-        #{{i + 1}} - Run with NPC {{r.npc.name}} for {{r.amountOfRolls}} times.
-      </span>
-    </mat-list-item>
-  </mat-list>
 </div>
 <app-roll-list></app-roll-list>

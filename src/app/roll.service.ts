@@ -36,7 +36,7 @@ export class RollService {
 
   private generateRollValues(roll: Roll, rollIdx: number, divider: number = 0) {
     const percentageSum = roll.npc.groups.reduce((acc, curr) => acc + curr.probability, 0);
-    let canDrop = Math.random() <= Math.min(0.8, (percentageSum / Math.pow(2, divider)));
+    let canDrop = Math.random() <= Math.min(0.7, (percentageSum / Math.pow(2, divider)));
     if (canDrop) {
       const normArray = this.getNormalizedArray(roll.npc.groups, percentageSum);
       const chance = Math.random();

@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { RollComponent } from '../roll/roll.component';
 import { Roll } from '../shared/roll';
 import { RollService } from '../roll.service';
+import { DetailedRollComponent } from '../detailed-roll/detailed-roll.component';
 
 @Component({
   selector: 'app-roll-list',
@@ -35,6 +36,10 @@ export class RollListComponent implements OnInit {
       acc[curr.length]++;
       return acc;
     }, [0, 0, 0, 0]);
+  }
+
+  openDetails(roll: Roll) {
+    this.dialog.open(DetailedRollComponent, { width: '60vw', data: { roll } });
   }
 
   ngOnInit(): void {

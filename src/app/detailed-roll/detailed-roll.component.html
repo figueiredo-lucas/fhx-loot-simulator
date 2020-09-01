@@ -1,0 +1,8 @@
+<h3 mat-dialog-header>Detailed Roll for {{roll?.npc.name}} with {{roll?.amountOfRolls}} rolls.</h3>
+<mat-dialog-content>
+  <mat-list>
+    <mat-list-item *ngFor="let r of roll?.rolls; index as i">
+      <span matLine>#{{i + 1}} - Dropped {{r.length}} item(s): {{r.join(', ')}}</span>
+    </mat-list-item>
+  </mat-list>
+</mat-dialog-content>
